@@ -132,108 +132,144 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen cosmic-bg">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+      <header className="bg-cosmic-dark/80 backdrop-blur-md shadow-sm border-b border-cosmic-teal/20 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
-              <h1 className="text-2xl font-bold text-slate-900">УчиСфер</h1>
+              <h1 className="text-2xl font-bold cosmic-gradient font-orbitron">
+                УчиСфер
+              </h1>
               <nav className="hidden md:flex space-x-6">
                 <a
                   href="#"
-                  className="text-slate-600 hover:text-slate-900 transition-colors"
+                  className="text-slate-300 hover:text-cosmic-teal transition-colors"
                 >
-                  Курсы
+                  Галактика курсов
                 </a>
                 <a
                   href="#"
-                  className="text-slate-600 hover:text-slate-900 transition-colors"
+                  className="text-slate-300 hover:text-cosmic-teal transition-colors"
                 >
-                  Категории
+                  Планеты знаний
                 </a>
                 <a
                   href="#"
-                  className="text-slate-600 hover:text-slate-900 transition-colors"
+                  className="text-slate-300 hover:text-cosmic-teal transition-colors"
                 >
-                  Для бизнеса
+                  ИИ-наставник
                 </a>
                 <a
                   href="#"
-                  className="text-slate-600 hover:text-slate-900 transition-colors"
+                  className="text-slate-300 hover:text-cosmic-teal transition-colors"
                 >
-                  О нас
+                  Космопорт
                 </a>
               </nav>
             </div>
             <div className="flex items-center space-x-4">
-              <Button variant="ghost">Войти</Button>
-              <Button>Регистрация</Button>
+              <Button
+                variant="ghost"
+                className="text-slate-300 hover:text-cosmic-teal"
+              >
+                Войти
+              </Button>
+              <Button className="cosmic-button">Начать путешествие</Button>
             </div>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="floating-element absolute top-20 left-1/4 w-2 h-2 bg-cosmic-teal rounded-full pulse-glow"></div>
+          <div className="floating-element absolute top-40 right-1/3 w-1 h-1 bg-cosmic-purple rounded-full animate-star-twinkle"></div>
+          <div
+            className="floating-element absolute bottom-32 left-1/2 w-3 h-3 bg-cosmic-orange rounded-full pulse-glow"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="floating-element absolute top-60 right-1/4 w-1 h-1 bg-cosmic-teal rounded-full animate-star-twinkle"
+            style={{ animationDelay: "1s" }}
+          ></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
-              Обучение будущего
+            <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 font-orbitron">
+              Галактика
               <br />
-              <span className="text-blue-600">с ИИ-помощником</span>
+              <span className="cosmic-gradient">Знаний</span>
             </h2>
-            <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-              Персонализированные курсы, умные рекомендации и отслеживание
-              прогресса. Найдите идеальный курс среди 2,450+ программ от ведущих
-              провайдеров.
+            <p className="text-xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+              🚀 Исследуйте бесконечные миры обучения с ИИ-навигатором.
+              Персонализированные орбиты курсов, умные созвездия рекомендаций и
+              квантовое отслеживание прогресса в космосе знаний.
             </p>
 
-            {/* Search Bar */}
-            <div className="max-w-2xl mx-auto mb-8">
-              <div className="relative">
+            {/* Cosmic Search Bar */}
+            <div className="max-w-3xl mx-auto mb-12">
+              <div className="relative cosmic-card rounded-2xl p-2">
                 <Icon
                   name="Search"
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"
-                  size={20}
+                  className="absolute left-6 top-1/2 transform -translate-y-1/2 text-cosmic-teal"
+                  size={24}
                 />
                 <Input
-                  className="pl-12 pr-32 h-14 text-lg border-2 border-slate-200 focus:border-blue-500"
-                  placeholder="Найти курс: Python, дизайн, маркетинг..."
+                  className="pl-16 pr-40 h-16 text-lg bg-transparent border-none text-white placeholder-slate-400 focus:ring-2 focus:ring-cosmic-teal"
+                  placeholder="Найти свою звезду: Python, дизайн, маркетинг..."
                 />
-                <Button className="absolute right-2 top-2 h-10">Найти</Button>
+                <Button className="absolute right-2 top-2 h-12 cosmic-button">
+                  🔍 Исследовать
+                </Button>
               </div>
             </div>
 
-            {/* Popular searches */}
-            <div className="flex flex-wrap justify-center gap-2">
-              <span className="text-slate-500">Популярно:</span>
-              {["Python", "React", "UI/UX", "SMM", "Английский"].map((term) => (
+            {/* Popular Cosmic Searches */}
+            <div className="flex flex-wrap justify-center gap-3">
+              <span className="text-slate-400">🌟 Популярные созвездия:</span>
+              {["Python", "React", "UI/UX", "ИИ", "Blockchain"].map((term) => (
                 <button
                   key={term}
-                  className="px-3 py-1 bg-white rounded-full text-sm text-slate-600 hover:bg-blue-50 transition-colors"
+                  className="px-4 py-2 cosmic-card rounded-full text-sm text-cosmic-teal hover:bg-cosmic-teal/20 transition-all duration-300 hover:scale-105"
                 >
                   {term}
                 </button>
               ))}
+            </div>
+
+            {/* ИИ-ментор кнопка */}
+            <div className="mt-16">
+              <Button className="cosmic-button text-lg px-8 py-4 rounded-2xl">
+                🤖 Запустить ИИ-навигатор
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-cosmic-dark/50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
-                  <Icon name={stat.icon} className="text-blue-600" size={24} />
+              <div
+                key={index}
+                className="text-center cosmic-card p-6 rounded-2xl"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-cosmic-teal/20 rounded-full mb-4 pulse-glow">
+                  <Icon
+                    name={stat.icon}
+                    className="text-cosmic-teal"
+                    size={28}
+                  />
                 </div>
-                <div className="text-3xl font-bold text-slate-900 mb-2">
+                <div className="text-4xl font-bold cosmic-gradient mb-2 font-orbitron">
                   {stat.value}
                 </div>
-                <div className="text-slate-600">{stat.label}</div>
+                <div className="text-slate-400">{stat.label}</div>
               </div>
             ))}
           </div>
